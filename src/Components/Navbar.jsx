@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CiMenuFries } from "react-icons/ci";
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,21 +23,23 @@ const Navbar = () => {
           </button>
         </div>
         <nav className='hidden md:flex space-x-8'>
-          <button className='text-whte-800 hover:text-blue-500 transition duration-200'>Home</button>
-          <button className='text-white-800 hover:text-blue-500 transition duration-200'>About</button>
-          <button className='text-white-800 hover:text-blue-500 transition duration-200'>Services</button>
-          <button className='text-white-800 hover:text-blue-500 transition duration-200'>Contact</button>
+          {/* Use Link component for navigation */}
+          <Link to="/" className='text-white-800 hover:text-blue-500 transition duration-200'>Home</Link>
+          <Link to="/travels" className='text-white-800 hover:text-blue-500 transition duration-200'>Travels</Link>
+          <Link to="/cusine" className='text-white-800 hover:text-blue-500 transition duration-200'>Cusine</Link>
+          <Link to="/booking" className='text-white-800 hover:text-blue-500 transition duration-200'>Booking</Link>
+          <Link to="/faq" className='text-white-800 hover:text-blue-500 transition duration-200'>FAQ</Link>
         </nav>
       </div>
       <div 
         className={`fixed top-0 left-0 w-full h-max bg-black backdrop-blur-sm text-slate-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-[200%]'}`}
       >
         <div className='flex flex-col items-center border border-2 '>
-          <button onClick={closeMenu} className='text-rose-300 text-lg mb-4 '>✖ Close</button>
-          <button className='text-slate-100 py-2 hover:text-blue-500 transition duration-200 w-full text-center '>Home</button>
-          <button className='text-slate-100 py-2 hover:text-blue-500 transition duration-200 w-full text-center '>About</button>
-          <button className='text-slate-100 py-2 hover:text-blue-500 transition duration-200 w-full text-center '>Services</button>
-          <button className='text-slate-100 py-2 hover:text-blue-500 transition duration-200 w-full text-center '>Contact</button>
+          <Link to="/" className='text-white-800 hover:text-blue-500 transition duration-200'>Home</Link>
+          <Link to="/travels" className='text-white-800 hover:text-blue-500 transition duration-200'>Travels</Link>
+          <Link to="/cusine" className='text-white-800 hover:text-blue-500 transition duration-200'>Cusine</Link>
+          <Link to="/booking" className='text-white-800 hover:text-blue-500 transition duration-200'>Booking</Link>
+          <Link to="/faq" className='text-white-800 hover:text-blue-500 transition duration-200'>FAQ</Link>
         </div>
       </div>
     </div>
